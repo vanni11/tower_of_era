@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 7836c92461ed44809b8a365a6fdc2534
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass GameComplete extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    Start() {\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this.zepetoCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n       
+    });\r\n    }\r\n    OnTriggerEnter(collider) {\r\n        if (this.zepetoCharacter
+    == null || collider.gameObject != this.zepetoCharacter.gameObject) {\r\n           
+    return;\r\n        }\r\n        // Teleport\r\n        this.zepetoCharacter.Teleport(new
+    UnityEngine_1.Vector3(0, 0, 0), UnityEngine_1.Quaternion.identity);\r\n       
+    console.log(\"Teleport Complete!\");\r\n        // Show complete_text\r\n       
+    this.complete_text.color = new UnityEngine_1.Color(this.complete_text.color.r,
+    this.complete_text.color.g, this.complete_text.color.b, 1);\r\n        this.StartCoroutine(this.DoRoutine());\r\n   
+    }\r\n    *DoRoutine() {\r\n        while (this.complete_text.color.a >= 0) {\r\n           
+    yield null;\r\n            this.complete_text.color = new UnityEngine_1.Color(this.complete_text.color.r,
+    this.complete_text.color.g, this.complete_text.color.b, this.complete_text.color.a
+    - 0.05);\r\n            yield new UnityEngine_1.WaitForSeconds(0.05);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = GameComplete;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiR2FtZUNvbXBsZXRlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiR2FtZUNvbXBsZXRlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQW1GO0FBRW5GLDZFQUE2RTtBQUM3RSxpREFBcUQ7QUFFckQsTUFBcUIsWUFBYSxTQUFRLHFDQUFxQjtJQUszRCxLQUFLO1FBQ0QsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUUsRUFBRTtZQUN0RCxJQUFJLENBQUMsZUFBZSxHQUFHLDJDQUFhLENBQUMsUUFBUSxDQUFDLFdBQVcsQ0FBQyxZQUFZLENBQUMsU0FBUyxDQUFDO1FBQ3JGLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztJQUVELGNBQWMsQ0FBQyxRQUFrQjtRQUM3QixJQUFHLElBQUksQ0FBQyxlQUFlLElBQUksSUFBSSxJQUFJLFFBQVEsQ0FBQyxVQUFVLElBQUksSUFBSSxDQUFDLGVBQWUsQ0FBQyxVQUFVLEVBQUM7WUFDdEYsT0FBTztTQUNWO1FBRUQsV0FBVztRQUNYLElBQUksQ0FBQyxlQUFlLENBQUMsUUFBUSxDQUFDLElBQUkscUJBQU8sQ0FBQyxDQUFDLEVBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxFQUFFLHdCQUFVLENBQUMsUUFBUSxDQUFDLENBQUM7UUFDdkUsT0FBTyxDQUFDLEdBQUcsQ0FBQyxvQkFBb0IsQ0FBQyxDQUFDO1FBRWxDLHFCQUFxQjtRQUNyQixJQUFJLENBQUMsYUFBYSxDQUFDLEtBQUssR0FBRyxJQUFJLG1CQUFLLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxLQUFLLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQUMsYUFBYSxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsQ0FBQyxDQUFDLENBQUM7UUFDNUgsSUFBSSxDQUFDLGNBQWMsQ0FBQyxJQUFJLENBQUMsU0FBUyxFQUFFLENBQUMsQ0FBQztJQUUxQyxDQUFDO0lBRUQsQ0FBQyxTQUFTO1FBQ04sT0FBTSxJQUFJLENBQUMsYUFBYSxDQUFDLEtBQUssQ0FBQyxDQUFDLElBQUksQ0FBQyxFQUFFO1lBQ25DLE1BQU0sSUFBSSxDQUFDO1lBQ1gsSUFBSSxDQUFDLGFBQWEsQ0FBQyxLQUFLLEdBQUcsSUFBSSxtQkFBSyxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUMsRUFBRSxJQUFJLENBQUMsYUFBYSxDQUFDLEtBQUssQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUFDLGFBQWEsQ0FBQyxLQUFLLENBQUMsQ0FBQyxFQUFFLElBQUksQ0FBQyxhQUFhLENBQUMsS0FBSyxDQUFDLENBQUMsR0FBRyxJQUFJLENBQUMsQ0FBQztZQUM1SixNQUFNLElBQUksNEJBQWMsQ0FBQyxJQUFJLENBQUMsQ0FBQztTQUNsQztJQUNMLENBQUM7Q0FjSjtBQTlDRCwrQkE4Q0MifQ==","assetPath":"Assets/1_Scripts/GameComplete.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"complete_text","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"GameComplete","description":""},"isCompiled":true}'
+  typescriptHash: 6d17ab2a7be2c9f53127a0af8e59e500
+  onlyWriteTrigger: 0

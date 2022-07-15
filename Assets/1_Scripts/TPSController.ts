@@ -4,7 +4,7 @@ import { ZepetoScriptBehaviour } from 'ZEPETO.Script'
 
 export default class TPSController extends ZepetoScriptBehaviour {
 
-    public myCharacter: ZepetoCharacter;
+    private myCharacter: ZepetoCharacter;
 
     @Header("Camera Angle")
     public myCamera: ZepetoCamera;
@@ -39,7 +39,7 @@ export default class TPSController extends ZepetoScriptBehaviour {
 
             this.light.transform.position = new Vector3(this.myCharacter.transform.position.x + this.lightX, this.myCharacter.transform.position.y + this.lightY, this.myCharacter.transform.position.z + this.lightZ);
         } catch (error) {
-            console.log(error);
+            console.log("TPSController Error : " + error);
         }
     }
 

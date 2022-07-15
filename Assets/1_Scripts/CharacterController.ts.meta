@@ -18,14 +18,19 @@ ScriptedImporter:
   wrapperTypes: []
   WrapperFilters: []
   wrapperOutputDirectory: Generated
-  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
-    ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nclass
-    CharacterController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
-    {\r\n        $extension(\"ZEPETO.Character.Controller.ZepetoPlayersExtension\").CreatePlayerWithZepetoId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
-    \"\", \"zxs1\", new ZEPETO_Character_Controller_1.SpawnInfo(), true);\r\n       
-    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
-    => {\r\n            let _player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\r\n       
-    });\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.motionV2Data.Gravity
-    = 20;\r\n    }\r\n}\r\nexports.default = CharacterController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hhcmFjdGVyQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNoYXJhY3RlckNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsNkVBQW9HO0FBRXBHLE1BQXFCLG1CQUFvQixTQUFRLHFDQUFxQjtJQUVsRSxLQUFLO1FBQ0QsaUVBQXVCLHdCQUF3QixDQUEvQywyQ0FBYSxDQUFDLFFBQVEsRUFBMEIsRUFBRSxFQUFFLE1BQU0sRUFBRSxJQUFJLHVDQUFTLEVBQUUsRUFBRSxJQUFJLEVBQUU7UUFFbkYsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxJQUFJLE9BQU8sR0FBZ0IsMkNBQWEsQ0FBQyxRQUFRLENBQUMsV0FBVyxDQUFDO1FBQ2xFLENBQUMsQ0FBQyxDQUFDO1FBRUgsMkNBQWEsQ0FBQyxRQUFRLENBQUMsWUFBWSxDQUFDLE9BQU8sR0FBRyxFQUFFLENBQUM7SUFDckQsQ0FBQztDQUVKO0FBWkQsc0NBWUMifQ==","assetPath":"Assets/1_Scripts/CharacterController.ts","manifest":{"properties":[],"name":"CharacterController","description":""},"isCompiled":true}'
-  typescriptHash: de1948aca1f7e404466326bf97e58c5f
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nconst
+    ZEPETO_Character_Controller_1 = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nclass
+    CharacterController extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n   
+    Start() {\\r\\n        $extension(\\\"ZEPETO.Character.Controller.ZepetoPlayersExtension\\\").CreatePlayerWithZepetoId(ZEPETO_Character_Controller_1.ZepetoPlayers.instance,
+    \\\"\\\", \\\"zxs1\\\", new ZEPETO_Character_Controller_1.SpawnInfo(), true);\\r\\n       
+    //\uC81C\uD398\uD1A0 \uCE90\uB9AD\uD130\uAC00 \uC815\uC0C1\uC801\uC73C\uB85C
+    \uC0DD\uC131\uB418\uB294\uC9C0 \uB9AC\uC2A4\uB108\uAC00 \uB4E3\uACE0\uC788\uB2E4\uAC00,
+    \uADF8 \uB85C\uCEEC\uD50C\uB808\uC774\uC5B4\uB97C this.zepetoCharacter \uBCC0\uC218\uC5D0
+    \uB123\uC74C\\r\\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n            let _player = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer;\\r\\n       
+    });\\r\\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.motionV2Data.Gravity
+    = 20;\\r\\n    }\\r\\n}\\r\\nexports.default = CharacterController;\\r\\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQ2hhcmFjdGVyQ29udHJvbGxlci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkNoYXJhY3RlckNvbnRyb2xsZXIudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxpREFBcUQ7QUFDckQsNkVBQW9HO0FBRXBHLE1BQXFCLG1CQUFvQixTQUFRLHFDQUFxQjtJQUVsRSxLQUFLO1FBQ0QsaUVBQXVCLHdCQUF3QixDQUEvQywyQ0FBYSxDQUFDLFFBQVEsRUFBMEIsRUFBRSxFQUFFLE1BQU0sRUFBRSxJQUFJLHVDQUFTLEVBQUUsRUFBRSxJQUFJLEVBQUU7UUFFbkYsd0VBQXdFO1FBQ3hFLDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsSUFBSSxPQUFPLEdBQWdCLDJDQUFhLENBQUMsUUFBUSxDQUFDLFdBQVcsQ0FBQztRQUNsRSxDQUFDLENBQUMsQ0FBQztRQUVILDJDQUFhLENBQUMsUUFBUSxDQUFDLFlBQVksQ0FBQyxPQUFPLEdBQUcsRUFBRSxDQUFDO0lBQ3JELENBQUM7Q0FFSjtBQWJELHNDQWFDIn0=\",\"assetPath\":\"Assets/1_Scripts/CharacterController.ts\",\"manifest\":{\"properties\":[],\"name\":\"CharacterController\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: efe2c1c178e1e03b2f172216d2eee43b
+  onlyWriteTrigger: 0

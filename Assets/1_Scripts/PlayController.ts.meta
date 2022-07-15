@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 4ca0d88b70dfd495b8cb1552b855565e
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst ZEPETO_Character_Controller_1 = require(\"ZEPETO.Character.Controller\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass PlayController extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\r\n            this.myCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\r\n       
+    });\r\n    }\r\n    Update() {\r\n        try {\r\n            if (null == this.myCharacter)
+    {\r\n                return;\r\n            }\r\n        }\r\n        catch (error)
+    {\r\n            console.log(\"PlayController Error : \" + error);\r\n       
+    }\r\n    }\r\n}\r\nexports.default = PlayController;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGxheUNvbnRyb2xsZXIuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJQbGF5Q29udHJvbGxlci50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZFQUE2RTtBQUM3RSxpREFBcUQ7QUFFckQsTUFBcUIsY0FBZSxTQUFRLHFDQUFxQjtJQUk3RCxLQUFLO1FBQ0QsMkNBQWEsQ0FBQyxRQUFRLENBQUMsa0JBQWtCLENBQUMsV0FBVyxDQUFDLEdBQUcsRUFBRTtZQUN2RCxJQUFJLENBQUMsV0FBVyxHQUFHLDJDQUFhLENBQUMsUUFBUSxDQUFDLFdBQVcsQ0FBQyxZQUFZLENBQUMsU0FBUyxDQUFDO1FBQ2pGLENBQUMsQ0FBQyxDQUFDO0lBQ1AsQ0FBQztJQUVELE1BQU07UUFDRixJQUFJO1lBQ0EsSUFBRyxJQUFJLElBQUksSUFBSSxDQUFDLFdBQVcsRUFBRTtnQkFDekIsT0FBTzthQUNWO1NBQ0o7UUFBQyxPQUFPLEtBQUssRUFBRTtZQUNaLE9BQU8sQ0FBQyxHQUFHLENBQUMseUJBQXlCLEdBQUcsS0FBSyxDQUFDLENBQUM7U0FDbEQ7SUFDTCxDQUFDO0NBRUo7QUFwQkQsaUNBb0JDIn0=","assetPath":"Assets/1_Scripts/PlayController.ts","manifest":{"properties":[],"name":"PlayController","description":""},"isCompiled":true}'
+  typescriptHash: 78894b9a6f00b3616cf5fc010896cc4e
+  onlyWriteTrigger: 0

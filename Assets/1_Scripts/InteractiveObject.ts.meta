@@ -1,0 +1,59 @@
+fileFormatVersion: 2
+guid: 42d51b445bae24b5e9c7bf3ea81d0d3c
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: "{\"source\":\"\\\"use strict\\\";\\r\\nObject.defineProperty(exports,
+    \\\"__esModule\\\", { value: true });\\r\\nconst UnityEngine_1 = require(\\\"UnityEngine\\\");\\r\\nconst
+    ZEPETO_Character_Controller_1 = require(\\\"ZEPETO.Character.Controller\\\");\\r\\nconst
+    ZEPETO_Script_1 = require(\\\"ZEPETO.Script\\\");\\r\\nclass InteractiveObject
+    extends ZEPETO_Script_1.ZepetoScriptBehaviour {\\r\\n    Start() {\\r\\n       
+    ZEPETO_Character_Controller_1.ZepetoPlayers.instance.OnAddedLocalPlayer.AddListener(()
+    => {\\r\\n            this.myCharacter = ZEPETO_Character_Controller_1.ZepetoPlayers.instance.LocalPlayer.zepetoPlayer.character;\\r\\n       
+    });\\r\\n    }\\r\\n    OnTriggerEnter(collider) {\\r\\n        if (this.speedControl
+    == true) {\\r\\n            UnityEngine_1.GameObject.Destroy(this.SpeedAddObject);\\r\\n           
+    this.myCharacter.additionalWalkSpeed = this.speedAddAmount;\\r\\n           
+    this.myCharacter.additionalRunSpeed = this.speedAddAmount;\\r\\n            this.nowStatus
+    = \\\"Speed_Added\\\";\\r\\n            this.speedControl = false;\\r\\n           
+    this.StartCoroutine(this.SpeedUpRoutine());\\r\\n            this.objectParticle.Play();\\r\\n           
+    this.characterParticle.Play();\\r\\n            this.StartCoroutine(this.EffectTraceRoutine());\\r\\n       
+    }\\r\\n        if (this.JumpControl == true) {\\r\\n            UnityEngine_1.GameObject.Destroy(this.JumpAddObject);\\r\\n           
+    this.myCharacter.additionalJumpPower = this.JumpAddAmount;\\r\\n            this.nowStatus
+    = \\\"Jump_Added\\\";\\r\\n            this.JumpControl = false;\\r\\n           
+    this.StartCoroutine(this.JumpAddRoutine());\\r\\n            this.objectParticle.Play();\\r\\n           
+    this.characterParticle.Play();\\r\\n            this.StartCoroutine(this.EffectTraceRoutine());\\r\\n       
+    }\\r\\n    }\\r\\n    *SpeedUpRoutine() {\\r\\n        yield null;\\r\\n       
+    yield new UnityEngine_1.WaitForSeconds(this.speedAddTime);\\r\\n        this.myCharacter.additionalWalkSpeed
+    = 0;\\r\\n        this.myCharacter.additionalRunSpeed = 0;\\r\\n        this.nowStatus
+    = \\\"\\\";\\r\\n    }\\r\\n    *JumpAddRoutine() {\\r\\n        yield null;\\r\\n       
+    yield new UnityEngine_1.WaitForSeconds(this.JumpAddTime);\\r\\n        this.myCharacter.additionalJumpPower
+    = 0;\\r\\n        this.nowStatus = \\\"\\\";\\r\\n    }\\r\\n    // [Cannot read
+    property 'transform' of undefined] \uC5D0\uB7EC \uBC1C\uC0DD\\r\\n    // Update()
+    {\\r\\n    //     if(null == this.myCharacter) return;\\r\\n    //     this.characterParticle.transform.position
+    = new Vector3(this.myCharacter.transform.position.x, this.myCharacter.transform.position.y
+    + 1.5, this.myCharacter.transform.position.z);\\r\\n    // }\\r\\n    // \uC6D0\uC778
+    \uC54C \uC218 \uC5C6\uC5B4\uC11C \uCF54\uB8E8\uD2F4\uC73C\uB85C \uB300\uCCB4\uD558\uB2C8
+    \uC815\uC0C1\uC801\uC73C\uB85C \uC791\uB3D9\\r\\n    *EffectTraceRoutine() {\\r\\n       
+    while (this.nowStatus == \\\"Speed_Added\\\" || this.nowStatus == \\\"Jump_Added\\\")
+    {\\r\\n            yield null;\\r\\n            if (null == this.myCharacter)\\r\\n               
+    return;\\r\\n            this.characterParticle.transform.position = new UnityEngine_1.Vector3(this.myCharacter.transform.position.x,
+    this.myCharacter.transform.position.y + 1.5, this.myCharacter.transform.position.z);\\r\\n           
+    yield new UnityEngine_1.WaitForSeconds(0.05);\\r\\n        }\\r\\n        this.characterParticle.Stop();\\r\\n   
+    }\\r\\n}\\r\\nexports.default = InteractiveObject;\\r\\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiSW50ZXJhY3RpdmVPYmplY3QuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJJbnRlcmFjdGl2ZU9iamVjdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUE0RjtBQUM1Riw2RUFBNkU7QUFDN0UsaURBQXFEO0FBRXJELE1BQXFCLGlCQUFrQixTQUFRLHFDQUFxQjtJQWtCaEUsS0FBSztRQUNELDJDQUFhLENBQUMsUUFBUSxDQUFDLGtCQUFrQixDQUFDLFdBQVcsQ0FBQyxHQUFHLEVBQUU7WUFDdkQsSUFBSSxDQUFDLFdBQVcsR0FBRywyQ0FBYSxDQUFDLFFBQVEsQ0FBQyxXQUFXLENBQUMsWUFBWSxDQUFDLFNBQVMsQ0FBQztRQUNqRixDQUFDLENBQUMsQ0FBQztJQUNQLENBQUM7SUFFRCxjQUFjLENBQUMsUUFBa0I7UUFDN0IsSUFBRyxJQUFJLENBQUMsWUFBWSxJQUFJLElBQUksRUFBRTtZQUMxQix3QkFBVSxDQUFDLE9BQU8sQ0FBQyxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUM7WUFDeEMsSUFBSSxDQUFDLFdBQVcsQ0FBQyxtQkFBbUIsR0FBRyxJQUFJLENBQUMsY0FBYyxDQUFDO1lBQzNELElBQUksQ0FBQyxXQUFXLENBQUMsa0JBQWtCLEdBQUcsSUFBSSxDQUFDLGNBQWMsQ0FBQztZQUMxRCxJQUFJLENBQUMsU0FBUyxHQUFHLGFBQWEsQ0FBQztZQUMvQixJQUFJLENBQUMsWUFBWSxHQUFHLEtBQUssQ0FBQztZQUMxQixJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxjQUFjLEVBQUUsQ0FBQyxDQUFDO1lBRTNDLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxFQUFFLENBQUM7WUFDM0IsSUFBSSxDQUFDLGlCQUFpQixDQUFDLElBQUksRUFBRSxDQUFDO1lBQzlCLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLGtCQUFrQixFQUFFLENBQUMsQ0FBQztTQUNsRDtRQUNELElBQUcsSUFBSSxDQUFDLFdBQVcsSUFBSSxJQUFJLEVBQUU7WUFDekIsd0JBQVUsQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxDQUFDO1lBQ3ZDLElBQUksQ0FBQyxXQUFXLENBQUMsbUJBQW1CLEdBQUcsSUFBSSxDQUFDLGFBQWEsQ0FBQztZQUMxRCxJQUFJLENBQUMsU0FBUyxHQUFHLFlBQVksQ0FBQztZQUM5QixJQUFJLENBQUMsV0FBVyxHQUFHLEtBQUssQ0FBQztZQUN6QixJQUFJLENBQUMsY0FBYyxDQUFDLElBQUksQ0FBQyxjQUFjLEVBQUUsQ0FBQyxDQUFDO1lBRTNDLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxFQUFFLENBQUM7WUFDM0IsSUFBSSxDQUFDLGlCQUFpQixDQUFDLElBQUksRUFBRSxDQUFDO1lBQzlCLElBQUksQ0FBQyxjQUFjLENBQUMsSUFBSSxDQUFDLGtCQUFrQixFQUFFLENBQUMsQ0FBQztTQUNsRDtJQUNMLENBQUM7SUFFRCxDQUFDLGNBQWM7UUFDWCxNQUFNLElBQUksQ0FBQztRQUNYLE1BQU0sSUFBSSw0QkFBYyxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQztRQUM1QyxJQUFJLENBQUMsV0FBVyxDQUFDLG1CQUFtQixHQUFHLENBQUMsQ0FBQztRQUN6QyxJQUFJLENBQUMsV0FBVyxDQUFDLGtCQUFrQixHQUFHLENBQUMsQ0FBQztRQUN4QyxJQUFJLENBQUMsU0FBUyxHQUFHLEVBQUUsQ0FBQztJQUN4QixDQUFDO0lBRUQsQ0FBQyxjQUFjO1FBQ1gsTUFBTSxJQUFJLENBQUM7UUFDWCxNQUFNLElBQUksNEJBQWMsQ0FBQyxJQUFJLENBQUMsV0FBVyxDQUFDLENBQUM7UUFDM0MsSUFBSSxDQUFDLFdBQVcsQ0FBQyxtQkFBbUIsR0FBRyxDQUFDLENBQUM7UUFDekMsSUFBSSxDQUFDLFNBQVMsR0FBRyxFQUFFLENBQUM7SUFDeEIsQ0FBQztJQUVELHdEQUF3RDtJQUN4RCxhQUFhO0lBQ2IsMkNBQTJDO0lBQzNDLDBMQUEwTDtJQUMxTCxJQUFJO0lBRUosaUNBQWlDO0lBQ2pDLENBQUMsa0JBQWtCO1FBQ2YsT0FBTSxJQUFJLENBQUMsU0FBUyxJQUFJLGFBQWEsSUFBSSxJQUFJLENBQUMsU0FBUyxJQUFJLFlBQVksRUFBRTtZQUNyRSxNQUFNLElBQUksQ0FBQztZQUNYLElBQUcsSUFBSSxJQUFJLElBQUksQ0FBQyxXQUFXO2dCQUFFLE9BQU87WUFDcEMsSUFBSSxDQUFDLGlCQUFpQixDQUFDLFNBQVMsQ0FBQyxRQUFRLEdBQUcsSUFBSSxxQkFBTyxDQUFDLElBQUksQ0FBQyxXQUFXLENBQUMsU0FBUyxDQUFDLFFBQVEsQ0FBQyxDQUFDLEVBQUUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsR0FBRyxHQUFHLEVBQUUsSUFBSSxDQUFDLFdBQVcsQ0FBQyxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDO1lBQ25MLE1BQU0sSUFBSSw0QkFBYyxDQUFDLElBQUksQ0FBQyxDQUFDO1NBQ2xDO1FBQ0QsSUFBSSxDQUFDLGlCQUFpQixDQUFDLElBQUksRUFBRSxDQUFDO0lBQ2xDLENBQUM7Q0FFSjtBQWxGRCxvQ0FrRkMifQ==\",\"assetPath\":\"Assets/1_Scripts/InteractiveObject.ts\",\"manifest\":{\"properties\":[{\"assembly\":\"mscorlib\",\"name\":\"speedControl\",\"type\":\"System.Boolean\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"SpeedAddObject\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"speedAddAmount\",\"type\":\"System.Int32\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"speedAddTime\",\"type\":\"System.Int32\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"JumpControl\",\"type\":\"System.Boolean\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"Space\",\"args\":[\"10\"]}]},{\"assembly\":\"UnityEngine.CoreModule\",\"name\":\"JumpAddObject\",\"type\":\"UnityEngine.GameObject\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"JumpAddAmount\",\"type\":\"System.Int32\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"mscorlib\",\"name\":\"JumpAddTime\",\"type\":\"System.Int32\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"\",\"name\":\"nowStatus\",\"type\":\"String\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[{\"name\":\"Space\",\"args\":[\"10\"]}]},{\"assembly\":\"UnityEngine.ParticleSystemModule\",\"name\":\"objectParticle\",\"type\":\"UnityEngine.ParticleSystem\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]},{\"assembly\":\"UnityEngine.ParticleSystemModule\",\"name\":\"characterParticle\",\"type\":\"UnityEngine.ParticleSystem\",\"isArray\":false,\"initValue\":[],\"enumKeys\":[],\"enumValues\":[],\"attributes\":[]}],\"name\":\"InteractiveObject\",\"description\":\"\"},\"isCompiled\":true}"
+  typescriptHash: a060863acc9b487f1d4f9827af0c4c92
+  onlyWriteTrigger: 0
